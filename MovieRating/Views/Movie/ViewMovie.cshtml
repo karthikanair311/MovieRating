@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MovieRating.Models.MovieListViewModel>
+
+
+<div class="text-center">
+    <h2 class="display-4">MOVIES</h2>
+</div>
+<div class="text-center">
+    <div class="p-3 mb-2 bg-dark text-white">List of Movies</div>
+</div>
+
+<form role="form" asp-action="ViewMovie">
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.AvgRating)
+                </th>
+
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgRating)
+                </td>
+
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</form>
+

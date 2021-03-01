@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Rating\**" />
+    <Compile Remove="Views\Reviewer\**" />
+    <Content Remove="Views\Rating\**" />
+    <Content Remove="Views\Reviewer\**" />
+    <EmbeddedResource Remove="Views\Rating\**" />
+    <EmbeddedResource Remove="Views\Reviewer\**" />
+    <None Remove="Views\Rating\**" />
+    <None Remove="Views\Reviewer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\RatingController.cs" />
+    <Compile Remove="Controllers\ReviewerController.cs" />
+    <Compile Remove="Data\KeylessAttribute.cs" />
+    <Compile Remove="Migrations\20210222144632_RegisterUser.cs" />
+    <Compile Remove="Migrations\20210222144632_RegisterUser.Designer.cs" />
+    <Compile Remove="Migrations\20210222150644_RegisterUser.cs" />
+    <Compile Remove="Migrations\20210222150644_RegisterUser.Designer.cs" />
+    <Compile Remove="Migrations\20210224062229_Movie.cs" />
+    <Compile Remove="Migrations\20210224062229_Movie.Designer.cs" />
+    <Compile Remove="Migrations\20210224115957_Reviewer.cs" />
+    <Compile Remove="Migrations\20210224115957_Reviewer.Designer.cs" />
+    <Compile Remove="Migrations\20210224120931_Movie.cs" />
+    <Compile Remove="Migrations\20210224120931_Movie.Designer.cs" />
+    <Compile Remove="Migrations\20210224121227_Reviewer.cs" />
+    <Compile Remove="Migrations\20210224121227_Reviewer.Designer.cs" />
+    <Compile Remove="Migrations\20210224121950_Reviewer.cs" />
+    <Compile Remove="Migrations\20210224121950_Reviewer.Designer.cs" />
+    <Compile Remove="Migrations\20210224174658_Rating.cs" />
+    <Compile Remove="Migrations\20210224174658_Rating.Designer.cs" />
+    <Compile Remove="Migrations\20210224182413_Rating.cs" />
+    <Compile Remove="Migrations\20210224182413_Rating.Designer.cs" />
+    <Compile Remove="Migrations\20210225061703_Movie.cs" />
+    <Compile Remove="Migrations\20210225061703_Movie.Designer.cs" />
+    <Compile Remove="Migrations\20210225062355_Movie.cs" />
+    <Compile Remove="Migrations\20210225062355_Movie.Designer.cs" />
+    <Compile Remove="Migrations\20210228213612_new.cs" />
+    <Compile Remove="Migrations\20210228213612_new.Designer.cs" />
+    <Compile Remove="Models\Reviewer.cs" />
+    <Compile Remove="Models\StarRating.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Movie\TvShows.cshtml" />
+    <Content Remove="Views\Ratings\Delete.cshtml" />
+    <Content Remove="Views\Ratings\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Providers.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,63 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+
+
+
+<div class="text-center">
+    <div class="p-3 mb-2 bg-dark text-white">MOVIE RATING</div>
+    <p class="text-secondary">Let's Gather all the Reviews....</p>
+</div>
+<div class="container">
+    <div class="form-group">
+        <p class="text-primary">Search</p>
+        <input type="text" name="Search" autocomplete="off" class="form-control input-sm" placeholder="Search movies, TV, actors....">
+        <br />
+        <p class="text-primary">Movies</p>
+        <style>
+            .submit {
+                margin: 25px;
+            }
+
+            .submit {
+                margin: 25px;
+            }
+        </style>
+        <input type="submit" value="Add Movie" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Movie")'">
+        <input type="submit" value="View Movie" class="btn btn-primary" onclick="location.href='@Url.Action("ViewMovie", "Movie")'">
+        <br />
+        <br />
+        <p class="text-primary">Reviewer Details</p>
+        <style>
+            .submit {
+                margin: 25px;
+            }
+
+            .submit {
+                margin: 25px;
+            }
+        </style>
+        <input type="submit" value="Add Reviewer Details" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ReviewerDetails")'">
+        <input type="submit" value="View Reviewer Details" class="btn btn-primary" onclick="location.href='@Url.Action("ViewReviewerDetails", "ReviewerDetails")'">
+        <br />
+        <br />
+        <p class="text-primary">Movie Ratings</p>
+        <style>
+            .submit {
+                margin: 25px;
+            }
+
+            .submit {
+                margin: 25px;
+            }
+        </style>
+        <input type="submit" value="Add Rating" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Ratings")'">
+        <input type="submit" value="View Ratings" class="btn btn-primary" onclick="location.href='@Url.Action("ViewRating", "Ratings")'">
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<UserDetails> SignInManager
+@model Movie
+@{
+    ViewData["Title"] = "Index of Movies";
+}
+
+<div class="row">
+    @if (TempData["validationmessage"] != null)
+    {
+        string alertType = "alert alert-" + TempData["alertType"];
+        <div class="@alertType">
+            <strong>Alert!</strong> @TempData["validationmessage"]
+        </div>
+    }
+</div>
+
+
+
+
+<div class="text-center">
+    <h2 class="display-4">MOVIES</h2>
+</div>
+<div class="text-center">
+    <div class="p-3 mb-2 bg-dark text-white">Add Movies</div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form role="form" asp-action="AddMovie" method="post">
+
+            <div class="form-group">
+                <label for="Title">Movie Title</label>
+                <input type="text" name="Title" asp-for="Title" class="form-control input-sm" autocomplete="off" data-val="true" data-val-required="The Movie Title field is required." placeholder="Movie Title">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre">Genre</label>
+                <input type="text" name="Genre" data-val="true" autocomplete="off" data-val-required="The Genre field is required." asp-for="Genre" class="form-control input-sm" placeholder="Genre">
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ReleaseDate">Release Date</label>
+                <input type="date" name="ReleaseDate" asp-for="ReleaseDate" autocomplete="off" data-val="true" class="form-control input-sm" data-val-required="The ReleaseDate field is required." placeholder="Release Date">
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="Add Movie" class="btn btn-info btn-block">
+            <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+        </form>
+
+    </div>
+
+</div>
+

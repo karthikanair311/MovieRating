@@ -1,0 +1,59 @@
+﻿@model Rating
+@{
+    ViewData["Title"] = "Index of Ratings";
+}
+
+<div class="row">
+    @if (TempData["validationmessage"] != null)
+    {
+        string alertType = "alert alert-" + TempData["alertType"];
+        <div class="@alertType">
+            <strong>Alert!</strong> @TempData["validationmessage"]
+        </div>
+    }
+</div>
+<div class="text-center">
+    <h2 class="display-4">MOVIES</h2>
+</div>
+<div class="text-center">
+    <div class="p-3 mb-2 bg-dark text-white">Add Rating to Movies</div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form role="form" asp-action="AddMovie" method="post">
+
+            <div class="form-group">
+                <label asp-for="MovieId" class="control-label">Movie Id</label>
+                <select asp-for="MovieId" class="form-control" asp-items="ViewBag.MovieId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewerId" class="control-label">Reviewer Id</label>
+                <select asp-for="ReviewerId" class="form-control" asp-items="ViewBag.ReviewerId"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="RatingStar">Rating Star</label>
+                <input type="number" name="RatingStar" asp-for="RatingStar" class="form-control input-sm" autocomplete="off" data-val="true" data-val-required="Rating Star field is required." placeholder="RatingStar">
+                <span asp-validation-for="RatingStar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewComment">Review Comment</label>
+                <input type="text" name="ReviewComment" data-val="true" autocomplete="off" data-val-required="Review Comment field is required." asp-for="ReviewComment" class="form-control input-sm" placeholder="ReviewComment">
+                <span asp-validation-for="ReviewComment" class="text-danger"></span>
+            </div>
+
+
+            <input type="submit" value="Add Rating" class="btn btn-info btn-block">
+            <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+        </form>
+
+    </div>
+
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
