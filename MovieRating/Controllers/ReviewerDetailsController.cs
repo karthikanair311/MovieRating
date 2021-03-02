@@ -48,8 +48,8 @@ namespace MovieRating.Controllers
             {
                 return View("Index");
             }
-            // return RedirectToAction("Index", "Home");
-            return View(model);
+             return RedirectToAction("Index", "Home");
+           // return View(model);
         }
     }
 }

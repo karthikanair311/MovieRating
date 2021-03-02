@@ -57,7 +57,7 @@ namespace MovieRating.Controllers
         public async Task<IActionResult> LogoutAsync()
         {
             await _signinManager.SignOutAsync();
-            return View("Index");
+            return RedirectToAction("FirstViewPage", "Home");
         }
     }
 }

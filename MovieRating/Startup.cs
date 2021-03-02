@@ -66,7 +66,7 @@ namespace MovieRating
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UserDetails}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=FirstViewPage}/{id?}");
             });
 
            
