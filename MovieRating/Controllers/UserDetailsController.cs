@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace MovieRating.Controllers
 {
+   // [Authorize]
     public class UserDetailsController : Controller
     {
        
@@ -23,6 +25,8 @@ namespace MovieRating.Controllers
             _context = context;
             _signinManager = signinManager;
         }
+
+      //  [AllowAnonymous]
         public IActionResult Index()
         {
           
@@ -33,7 +37,7 @@ namespace MovieRating.Controllers
             return View();
         }
 
-        
+       // [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> Login(UserViewModel model)
         {
@@ -57,7 +61,7 @@ namespace MovieRating.Controllers
         public async Task<IActionResult> LogoutAsync()
         {
             await _signinManager.SignOutAsync();
-            return View("Index");
+            return RedirectToAction("FirstViewPage", "Home");
         }
     }
 }

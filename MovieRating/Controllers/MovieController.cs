@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieRating.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class MovieController : Controller
     {
         private readonly MovieRatingContext _context;

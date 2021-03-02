@@ -17,6 +17,11 @@ namespace MovieRating.Controllers
         {
             _logger = logger;
         }
+        public IActionResult FirstViewPage()
+        {
+            return View();
+        }
+
 
         public IActionResult Index()
         {

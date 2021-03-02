@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MovieRating.Data;
 using MovieRating.Models;
@@ -10,6 +11,7 @@ using System.Web.Providers.Entities;
 
 namespace MovieRating.Controllers
 {
+  //  [Authorize]
     public class RegisterUserController : Controller
     {
         private readonly MovieRatingContext _context;
@@ -22,11 +24,14 @@ namespace MovieRating.Controllers
             _userManager = userManager;
             _signinManager = signinManager;
         }
+       
+      //  [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
+        //[AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {

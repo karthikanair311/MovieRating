@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieRating.Models;
+///using MovieRating.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,16 +24,7 @@ namespace MovieRating.Data
         public DbSet<ReviewerDetails> ReviewerDetails { get; set; }
         public DbSet<Rating> Rating { get; set; }
         
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<UserDetails>(entity =>
-        //    {
-        //        entity.ToTable("userDetails");
 
-       
-               
-        //    });
-        //}
 
     }
 
