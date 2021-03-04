@@ -26,7 +26,9 @@ namespace MovieRating.Controllers
 
         public async Task<IActionResult> ViewMovie()
         {
+            /*var allreviewer = await _context.ReviewerDetails.ToListAsync()*///Include(c => c.MovieRatings);
             var moviedetails = await _context.Movie.Include(c => c.MovieRatings)
+
                .Select(k => new MovieListViewModel { 
                 
                    Title = k.Title,
